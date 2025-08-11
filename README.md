@@ -38,13 +38,11 @@ The repo contains all helper scripts (`read_fastqc.sh`, `read_trimming_fastp.sh`
 The data are hosted on Box.  
 1. Open the link in a browser:  
    <https://notredame.app.box.com/folder/333412290959>  
-2. Log in with your Not‑ReDame credentials.  
-3. Download the following items to your local machine (or to the HPC via `curl`/`wget` if you prefer).  
+2. Log in with your Notre Dame credentials.  
+3. Download the following items to your local machine.
 
-| Item | Description |
-|------|-------------|
-| `paired_end_fastq.zip` | Raw paired‑end FASTQ files (e.g., `sample_R1.fastq.gz`, `sample_R2.fastq.gz`) |
-| `reference_genome.zip` | Reference genome (FASTA, index files, etc.) |
+  - `input` folder with `fastq.gz` files and adapter seqenece file
+  - `references` folder with `.fasta` file
 
 > **Note**: The scripts assume a naming convention:  
 > *read 1* → `*_R1_*.fastq.gz` (or `*_1.fastq.gz`)  
