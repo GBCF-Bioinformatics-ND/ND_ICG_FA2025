@@ -7,7 +7,7 @@ Course content for Introduction to Computational Genomics (BIOS 40132-01 and BIO
 *(University HPC – “CRC” – `/scratch365/$USER`)*
 
 > **Tip** – Replace `$USER` with your actual HPC username.
-
+```
 ---
 
 ## 1. Log In & Prepare Working Directory  
