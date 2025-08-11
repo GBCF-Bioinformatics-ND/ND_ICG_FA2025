@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-#$ -M bmishra2@nd.edu      # Email address for notifications
+#$ -M <netid>@nd.edu      # Email address for notifications
 #$ -m abe                  # Send mail on begin, abort, and end
-#$ -q debug                # Job queue (e.g., debug, long, normal)
+#$ -q long                # Job queue (e.g., long)
 #$ -N variant_auto         # Job name for easy identification
-#$ -pe threads 4           # Request 4 cores/threads for parallel tasks (adjust as needed)
+#$ -pe smp 4           # Request 4 cores/threads for parallel tasks (adjust as needed)
 #$ -V                      # Export all environment variables to the job
 
 # Load the required bioinformatics module
@@ -14,7 +14,7 @@ module load bio/2.0
 # --- Configuration ---
 # Genome file name (must be unzipped .fasta in reference_dir)
 cd ../results
-genome=../reference/ecoli_rel606.fasta
+genome=../references/ecoli_rel606.fasta
 
 bwa index $genome
 

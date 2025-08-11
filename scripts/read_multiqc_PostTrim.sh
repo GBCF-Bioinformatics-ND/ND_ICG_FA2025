@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-#$ -M bmishra2@nd.edu
+#$ -M zzeng4@nd.edu
 #$ -m abe
-#$ -q debug
+#$ -q long
 #$ -N multiqc
 
-# load the bio module from CRC or intall fastqc
+# load the bio module from CRC or intall multiqc
 
 module load bio/0724
 

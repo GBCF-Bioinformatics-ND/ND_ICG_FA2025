@@ -1,7 +1,8 @@
 #!/bin/bash
+
 #$ -M <netid>@nd.edu
 #$ -m abe
-#$ -q debug
+#$ -q long
 #$ -N read_subsample
 
 # load the bio/2.0 module from CRC or intall conda module

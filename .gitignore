@@ -1,7 +1,10 @@
 # Input and Output folders
 input/
-reference/
+references/
 results/
 .DS_Store
+
+# job logs
+*.o*
 
 # R specific ignores

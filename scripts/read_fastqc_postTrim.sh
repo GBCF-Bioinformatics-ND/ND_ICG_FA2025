@@ -2,7 +2,7 @@
 
 #$ -M <netid>@nd.edu
 #$ -m abe
-#$ -q debug
+#$ -q long
 #$ -N read_qc
 
 # load the bio/2.0 module from CRC or intall fastqc

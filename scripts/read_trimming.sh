@@ -2,7 +2,8 @@
 
 #$ -M <netid>@nd.edu
 #$ -m abe
-#$ -q debug
+#$ -q long
+#$ -pe smp 4
 #$ -N read_trimming
 
 # load the bio/2.0 module from CRC or intall fastqc
@@ -14,6 +15,8 @@ input_dir="../input"
 results_base_dir="../results"
 trimmomatic_output_subdir="trimmed_reads"     # Specific subdirectory for Trimmomatic results
 TRIMMOMATIC_ADAPTERS="../input/NexteraPE-PE.fa" # <<< ADJUST THIS PATH!
+# uncomment for bulk RNA-seq data
+# TRIMMOMATIC_ADAPTERS="../input/TruSeq3-PE-2.fa"
 
 trimmomatic_results_dir="${results_base_dir}/${trimmomatic_output_subdir}"
 
@@ -25,13 +28,18 @@ mkdir -p "$trimmomatic_results_dir"
 cd "$input_dir" || { echo "Error: Could not change to input directory '$input_dir'. Exiting."; exit 1; }
 
 # 3. Run Trimmomatic by Looping through the forward reads (*_1.fastq.gz)
-for infile in *_1.fastq.gz; do
+for infile in *1.fastq.gz; do
+# uncomment for files with naming _R1_001.fastq.gz
+# for infile in *_R1_001.fastq.gz; do
     # Extract base name (e.g., 'sampleA' from 'sampleA_1.fastq.gz')
     base=$(basename "${infile}" _1.fastq.gz)
+    # uncomment for files with naming _R1_001.fastq.gz 
+    # base=$(basename "${infile}" _R1_001.fastq.gz)
 
     # Define paths for output files in the trimmomatic_results_dir
     forward_read_in="${infile}"
     reverse_read_in="${base}_2.fastq.gz" # Assumes _2.fastq.gz naming for reverse reads
+    #reverse_read_in="${base}_R2_001.fastq.gz" # uncomment for files with naming _R2_001.fastq.gz
 
     # Check if the reverse read file exists
     if [ ! -f "$reverse_read_in" ]; then

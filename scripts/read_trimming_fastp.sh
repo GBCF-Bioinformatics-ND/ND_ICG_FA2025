@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-#$ -M bmishra2@nd.edu      # Email address for notifications (replace with your actual email)
+#$ -M <netid>@nd.edu      # Email address for notifications (replace with your actual email)
 #$ -m abe                  # Send mail on begin, abort, and end
-#$ -q debug                # Job queue (e.g., debug, long, normal)
+#$ -q long                 # Job queue (e.g., debug, long, normal)
 #$ -N fastp_trim           # Job name for easy identification
-#$ -pe threads 4           # Request 4 cores/threads for parallel tasks (adjust as needed)
+#$ -pe smp 4           # Request 4 cores/threads for parallel tasks (adjust as needed)
 #$ -V                      # Export all environment variables to the job
 
 # Load the bio/2.0 module (assuming fastp is available here)
@@ -30,12 +30,18 @@ mkdir -p "$TRIMMED_READS_DIR" "$FASTP_REPORTS_DIR" "$FASTP_LOGS_DIR" # Create ou
 
 # Loop through all forward raw FASTQ files
 for infile in ${input_dir}/*_1.fastq.gz; do
+# uncomment for samples with naming _R1_001.fastq.gz
+# for infile in ${input_dir}/*_R1_001.fastq.gz; do
   # Extract base name (e.g., 'Sample1' from 'data/Sample1_1.fastq.gz')
   base=$(basename "${infile}" _1.fastq.gz)
+  # uncomment for samples with naming _R1_001.fastq.gz
+  #base=$(basename "${infile}" _R1_001.fastq.gz)
 
   # Define input and output file paths for the current sample
   fq1_in="${infile}"
   fq2_in="${input_dir}/${base}_2.fastq.gz"
+  # uncomment for files with naming _R2_001.fastq.gz
+  # fq2_in="${input_dir}/${base}_R2_001.fastq.gz"
   fq1_out="${TRIMMED_READS_DIR}/${base}_1.trim.fastq.gz"
   fq2_out="${TRIMMED_READS_DIR}/${base}_2.trim.fastq.gz"
   html_report="${FASTP_REPORTS_DIR}/${base}.fastp.html"
