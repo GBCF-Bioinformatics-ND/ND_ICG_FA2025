@@ -85,7 +85,7 @@ The data are hosted on Box.
 ```bash
 cd /scratch365/$USER/ND_ICG_FA2025
 ls -R input/
-ls -R reference/
+ls -R references/
 ```
 
 You should see all FASTQ files and the reference genome file inside those directories. Additional documentation and troubleshooting steps can be found at [CRC Documetation](https://docs.crc.nd.edu/resources/globus.html) and [Globus Tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
@@ -198,7 +198,7 @@ For any other questions, reach out to the course TA or post on the class Slack c
   - **Repo**: <https://datacarpentry.github.io/wrangling-genomics/index.html>  
   - **Data**: <https://www.pnas.org/doi/10.1073/pnas.0803151105> Blount et al. 2008: Historical contingency and the evolution of a key innovation in an experimental population of Escherichia coli.  
 
-### Fell Free to contact me or TAs if you have any questions.
+### Feel Free to contact me or TAs if you have any questions.
 
 - Instructor: Dr. Bharat Mishra bmishra2@nd.edu; 3028C McCourtney Hall East.
 - Co-Instructor and TA 1: Elizabeth Brooks ebrooks5@nd.edu
