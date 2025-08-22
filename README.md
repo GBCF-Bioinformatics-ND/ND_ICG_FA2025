@@ -53,15 +53,23 @@ The data are hosted on Box.
 
 ## 4. Transfer the Files to HPC with Globus  
 
-1. **Create a Globus transfer** from the Box folder to `/scratch365/$USER/ND_ICG_FA2025`.  
-2. In the Globus UI, point the *source* to the folder you just downloaded and *destination* to:  
+### **Set up a local endpoint**
 
-```
-/scratch365/$USER/ND_ICG_FA2025/
-```
+1. Go to [https://www.globus.org/get-started](https://www.globus.org/get-started) and select “log in”  
+2. Search for “University of Notre Dame”, and authenticate using ND credentials.
+3. Go to “Collections” \> click on “Get globus personal” on the upper right and download globus connect personal. Alternatively, use ![this link](https://www.globus.org/globus-connect-personal) to download.
+4. Once downloaded, open the application on your computer. A Set-up window will pop up for first-time users. Follow the on-screen instructions to log in and allow access to files.  
+5. Then, enter a collection name and description of your choice, and click “Save” \> “Exit Setup”.  
+6. To enable this local endpoint for transfer, keep the globus connect app running on your computer.
 
-3. Start the transfer and wait until it completes.  
-4. Verify on the HPC:
+### **Transfer files to CRC**
+
+1. Now log in to the web app ([https://app.globus.org/](https://app.globus.org/)), and on the “File Transfer” tab, select the your local collection on one side. Navigate or enter the path to the file or folder you want to transfer. 
+2. On the other side, search for and select “ND Center for Research Computing Collection” (Remember to check “Search All Collections”) .
+3. For CRC, you can only transfer files to/from scratch space. On the CRC side, enter /scratch365/netid in the “Path” field. Replace netid with your real netid.   
+   Note: First-time users will be prompted to consent to data access for CRC. Click “Continue” and authenticate using your ND email (1st option). Do **NOT** click “Link a new identity” (2nd option).
+4. Click “Start” to schedule a transfer. You can track the status under the “Activity” tab. When the transfer is complete, you will also receive an email notification.
+5. Verify on the HPC:
 
 ```bash
 cd /scratch365/$USER/ND_ICG_FA2025
@@ -69,7 +77,7 @@ ls -R input/
 ls -R reference/
 ```
 
-You should see all FASTQ files and the reference genome file inside those directories.
+You should see all FASTQ files and the reference genome file inside those directories. Additional documentation and troubleshooting steps can be found at ![CRC Documetation](https://docs.crc.nd.edu/resources/globus.html) and ![Globus Tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
 
 ---
 
