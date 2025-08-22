@@ -57,7 +57,7 @@ The data are hosted on Box.
 
 1. Go to [https://www.globus.org/get-started](https://www.globus.org/get-started) and select “log in”  
 2. Search for “University of Notre Dame”, and authenticate using ND credentials.
-3. Go to “Collections” \> click on “Get globus personal” on the upper right and download globus connect personal. Alternatively, use ![this link](https://www.globus.org/globus-connect-personal) to download.
+3. Go to “Collections” \> click on “Get globus personal” on the upper right and download globus connect personal. Alternatively, use [this link](https://www.globus.org/globus-connect-personal) to download.
 4. Once downloaded, open the application on your computer. A Set-up window will pop up for first-time users. Follow the on-screen instructions to log in and allow access to files.  
 5. Then, enter a collection name and description of your choice, and click “Save” \> “Exit Setup”.  
 6. To enable this local endpoint for transfer, keep the globus connect app running on your computer.
@@ -77,7 +77,7 @@ ls -R input/
 ls -R reference/
 ```
 
-You should see all FASTQ files and the reference genome file inside those directories. Additional documentation and troubleshooting steps can be found at ![CRC Documetation](https://docs.crc.nd.edu/resources/globus.html) and ![Globus Tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
+You should see all FASTQ files and the reference genome file inside those directories. Additional documentation and troubleshooting steps can be found at [CRC Documetation](https://docs.crc.nd.edu/resources/globus.html) and [Globus Tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
 
 ---
 
