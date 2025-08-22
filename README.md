@@ -12,9 +12,20 @@ Course content for Introduction to Computational Genomics (BIOS 40132-01 and BIO
 
 ## 1. Log In & Prepare Working Directory  
 
+To log in, you can use Terminal (Mac), PowerShell/Command Prompt (Win), or 3rd party SSH clients like Termius or MobaXTerm.
+To use CRC, you must be on campus and connected to eduroam. If you are off campus, consider using bastion (see below) or ND VPN.
+
 ```bash
-# 1. Log in to the CRC HPC (replace <hpc-host> with the real host name)
-ssh <hpc-host>
+# 1. Log in to the CRC front end
+# replace netid with your real netid, e.g. jsmith
+ssh netid@crcfe01.crc.nd.edu
+# or
+ssh netid@crcfe02.crc.nd.edu
+# if you're off campus
+ssh netid@bastion.crc.nd.edu
+
+# When prompted, type in your ND password and hit enter when finished.
+# You won't be able to see what you typed.
 
 # 2. Go to your scratch space
 cd /scratch365/$USER
@@ -57,10 +68,10 @@ The data are hosted on Box.
 
 1. Go to [https://www.globus.org/get-started](https://www.globus.org/get-started) and select “log in”  
 2. Search for “University of Notre Dame”, and authenticate using ND credentials.
-3. Go to “Collections” \> click on “Get globus personal” on the upper right and download globus connect personal. Alternatively, use [this link](https://www.globus.org/globus-connect-personal) to download.
-4. Once downloaded, open the application on your computer. A Set-up window will pop up for first-time users. Follow the on-screen instructions to log in and allow access to files.  
+3. Go to “Collections” \> click on “Get globus personal” on the upper right and download to your local machine. Alternatively, use [this link](https://www.globus.org/globus-connect-personal) to download.
+4. Open the application on your computer. A Set-up window will pop up for first-time users. Follow the on-screen instructions to log in and allow access to files.  
 5. Then, enter a collection name and description of your choice, and click “Save” \> “Exit Setup”.  
-6. To enable this local endpoint for transfer, keep the globus connect app running on your computer.
+6. To enable the local endpoint, keep the globus connect app running on your local machine.
 
 ### **Transfer files to CRC**
 
