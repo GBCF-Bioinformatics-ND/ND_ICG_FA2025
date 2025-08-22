@@ -77,7 +77,7 @@ ls -R input/
 ls -R reference/
 ```
 
-You should see all FASTQ files and the reference genome file inside those directories. Additional documentation and troubleshooting steps can be found at [CRC Documetation](https://docs.crc.nd.edu/resources/globus.html) and [Globus Tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
+You should see all FASTQ files and the reference genome file inside those directories. Additional documentation and troubleshooting steps can be found at [CRC Documetation](https://docs.crc.nd.edu/resources/globus.html) and [Globus Tutorial](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
 
 ---
 
