@@ -104,6 +104,15 @@ module load bio/2.0
 module load bio/0724
 ```
 
+Please also change the email in the script headers, for example:
+
+```bash
+nano read_fastqc.sh
+# change the line to your real netid
+#$ -M netid@nd.edu
+# save and exit
+```
+
 ### 5.1. FASTQ Quality Control (Pre‑Trim)
 
 ```bash
