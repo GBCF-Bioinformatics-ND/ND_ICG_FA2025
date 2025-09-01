@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#$ -M zzeng4@nd.edu
+#$ -M netid@nd.edu
 #$ -m abe
 #$ -q long
 #$ -N multiqc
