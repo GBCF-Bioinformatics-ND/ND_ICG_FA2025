@@ -32,6 +32,7 @@ for fq1 in ../results/fastp_trimmed/*_1.trim.fastq.gz
     sam=../results/sam/${base}.aligned.sam
     bam=../results/bam/${base}.aligned.bam
     sorted_bam=../results/bam/${base}.aligned.sorted.bam
+    alignment_stats=../results/bam/${base}.stats.out
     raw_bcf=../results/bcf/${base}_raw.bcf
     variants=../results/vcf/${base}_variants.vcf
     final_variants=../results/vcf/${base}_final_variants.vcf
@@ -40,6 +41,7 @@ for fq1 in ../results/fastp_trimmed/*_1.trim.fastq.gz
     samtools view -S -b $sam > $bam
     samtools sort -o $sorted_bam $bam
     samtools index $sorted_bam
+    samtools flagstat $sorted_bam > $alignment_stats
     bcftools mpileup -O b -o $raw_bcf -f $genome $sorted_bam
     bcftools call --ploidy 1 -m -v -o $variants $raw_bcf
     vcfutils.pl varFilter $variants > $final_variants
