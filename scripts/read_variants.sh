@@ -36,6 +36,7 @@ for fq1 in ../results/fastp_trimmed/*_1.trim.fastq.gz
     raw_bcf=../results/bcf/${base}_raw.bcf
     variants=../results/vcf/${base}_variants.vcf
     final_variants=../results/vcf/${base}_final_variants.vcf
+    variants_stats=../results/vcf/${base}_variants.stats.out
 
     bwa mem $genome $fq1 $fq2 > $sam
     samtools view -S -b $sam > $bam
@@ -45,5 +46,6 @@ for fq1 in ../results/fastp_trimmed/*_1.trim.fastq.gz
     bcftools mpileup -O b -o $raw_bcf -f $genome $sorted_bam
     bcftools call --ploidy 1 -m -v -o $variants $raw_bcf
     vcfutils.pl varFilter $variants > $final_variants
-
+    bcftools stats $final_variants > $variants_stats
+    
     done
